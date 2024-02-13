@@ -108,6 +108,43 @@ def bubble_sort(array: list) -> list:
 ```
 </details>
 
+## Counting Sort
+Counting sort works by iterating through the input, counting the number of times each item occurs, and using those counts to generate the sorted array. It is particularly useful when the range of elements in the input array is relatively small compared to the size of the array.
+
+<img src="counting-sort.png" width=550>
+
+```
+T: O(N) [BEST, AVG, WORST]
+S: O(1)
+```
+<details>
+<summary> View Code </summary>
+
+```python
+from collections import defaultdict
+
+
+def couting_sort(array: list) -> list:
+    element_count = defaultdict(int)
+    min_value, max_value = float("inf"), float("-inf")
+
+    for element in array:
+        if min_value > element:
+            min_value = element
+        if max_value < element:
+            max_value = element
+        element_count[element] += 1
+
+    result = []
+    for element in range(min_value, max_value +1):
+        if element in element_count:
+            result += [element] * element_count[element]
+
+    return result
+
+```
+</details>
+
 
 ## Merge sort
 Merge sort is a sorting algorithm that works by dividing an array into smaller subarrays, 

@@ -22,8 +22,7 @@ On the other hand When equal elements are indistinguishable, such as with intege
 Any given sorting algorithm which is not stable can be modified to be stable. Any comparison-based sorting algorithm which is not stable by nature can be modified to be stable by changing the key comparison operation so that the comparison of two keys considers position as a factor for objects with equal keys.
 
 # Comparison of Sorting Algorithms
-[![Comparison](Comparison-Sorting-Algorithms.png)](Comparison-Sorting-Algorithms.png)
-<!-- [4-5] -->
+![Comparison image](Comparison-Sorting-Algorithms.png)
 
 # Examples of Sorting Algorithms
 
@@ -32,6 +31,8 @@ Insertion sort is one of the most basic sorting algorithms that essentially inse
 an element into the right position of an already sorted list. It is usually added at the end 
 of a new array and moves down until it finds an element smaller thank itself (the desired position). 
 The process repeats for all the elements in the unsorted array.
+
+![insertion-sort illustrated](insertion-sort.gif)
 
 ```
 T: O(N **2) [AVG, WORST] 
@@ -56,6 +57,8 @@ def insertion_sort(array: list) -> list:
 Selection sort is a simple and efficient sorting algorithm that works by repeatedly selecting the smallest 
 (or largest) element from the unsorted portion of the list and moving it to the sorted portion of the list. 
 This process is repeated for the remaining unsorted portion until the entire list is sorted. 
+
+![selection-sort illustrated](selection-sort.gif)
 
 ```
 T: O(N **2) [AVG, BEST, WORST]
@@ -84,6 +87,8 @@ Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping 
 if they are in the wrong order. This algorithm is not suitable for large data sets as its average and 
 worst-case time complexity is quite high.
 
+<img src="bubble-sort.gif" width=550>
+
 ```
 T: O(N **2) [AVG, WORST]
    O(N) [BEST]
@@ -107,6 +112,8 @@ def bubble_sort(array: list) -> list:
 ## Merge sort
 Merge sort is a sorting algorithm that works by dividing an array into smaller subarrays, 
 sorting each subarray, and then merging the sorted subarrays back together to form the final sorted array.
+
+<img src="merge-sort.gif" width=550>
 
 ```
 T: O(N log N) [AVG, BEST, WORST]
@@ -144,13 +151,11 @@ def merge_sort(array: list) -> list:
 ```
 </details>
 
-<!-- TODO Code Embedding, > Try github refrence -->
-<!-- TODO Heap Sort -->
 
 ## Heap Sort
-Heap sort is a comparison-based sorting technique based on Binary Heap data structure. 
-It is similar to the selection sort where we first find the minimum element and place 
-the minimum element at the beginning. Repeat the same process for the remaining elements.
+Heap sort is a comparison-based sorting technique based on Binary Heap data structure. It constructs a max heap, repeatedly extracts the largest element (root) and places it at the end, then rebalances the heap. This process continues until the entire array is sorted, and no elements left in the heap. Full implementation with O(1) space [found here](https://cosmictechie.hashnode.dev/heap-sort)
+
+<img src="heap-sort.gif" width=550>
 
 ```
 T: O(N log N) [AVG, BEST, WORST]
@@ -158,6 +163,7 @@ S: O(1)
 ```
 <details>
 <summary> View Code </summary>
+for simplicity I'm doing it with O(N) space
 
 ```python
 def heap_sort(array: list) -> list:
@@ -174,6 +180,8 @@ def heap_sort(array: list) -> list:
 QuickSort is a sorting algorithm based on the Divide and Conquer algorithm that picks an element 
 as a pivot and partitions the given array around the picked pivot by placing the pivot in its correct 
 position in the sorted array.
+
+<img src="quick-sort.gif" width=550>
 
 ```
 T: O(N log N) (AVG, BEST)
